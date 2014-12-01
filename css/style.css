@@ -1,23 +1,46 @@
-body {
+/*	RED		BLUE
+*	#E74C3C	#4B77BE
+*/
+
+html, body {
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
  	box-sizing: border-box;         /* Opera/IE 8+ */	
+ 	height: 100%;
 }
 
 #container {
-
+	position: absolute;
+	height: 100%;
+	width: 100%;
 }
 
-#cyrilic {
+#pointsDiv {
+	/* TODO */
+}
+
+#timeDiv {
+	/* TODO */
+}
+
+#cyrillic {
 	height: 50%;
 	width: 100%;
 	float: left;
-	background-color: white;
+	background-color: #E74C3C;
 }
 
-#nonCyrilic {
+#cyrillicContent {
+	/* TODO */
+}
+
+#nonCyrillic {
 	height: 50%;
 	width: 100%;
 	float: left;
-	background-color: black;
+	background-color: #4B77BE;
+}
+
+#nonCyrillicContent {
+	/* TODO */
 }
