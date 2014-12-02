@@ -2,11 +2,16 @@
 *	#E74C3C	#4B77BE
 */
 
+* {
+	font-family: 'Ubuntu Condensed', sans-serif;
+}
+
 html, body {
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
  	box-sizing: border-box;         /* Opera/IE 8+ */	
  	height: 100%;
+ 	overflow: hidden;
 }
 
 #container {
@@ -45,21 +50,29 @@ html, body {
 	width: 100%;
 	height: 89%;
 	margin-top: 1%;
-	padding-top: 5%;
 	text-align: center;
-	font-size: 9em;
+	font-size: 15em;
+	background-color: #E74C3C;
 }
 
 #nonCyrillic {
-	height: 50%;
+	height: 45%;
 	width: 100%;
 	background-color: #4B77BE;
 }
 
 #nonCyrillicContent {
 	float: left;
+	border: none;
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	font-size: 9em;
+	font-size: 15em;
+	background-color: #4B77BE;
+	color: transparent;
+	text-shadow: 0 0 0 white;
 }
+
+&:focus {
+        outline: none;
+    }
