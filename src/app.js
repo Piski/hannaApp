@@ -17,7 +17,7 @@ $(document).ready(function() {
 	// Asetetaan neljä satunnaista lukua taulukkoon rNonCyrillic
 	for(var i = 0; i < 3; i++) {
 		randomNumber = Math.floor(Math.random() * arrayLength);
-		if (uniqueNumber(randomNumber, rNonCyrillic)) {
+		if (uniqueNumber(randomNumber, rNonCyrillic) && randomNumber != rCyrillic) {
 			rNonCyrillic[i] = randomNumber;
 		} else { i-- };
 	}
@@ -61,6 +61,8 @@ $(document).ready(function() {
 			$("#right_bot").css("color", "#E74C3C");
 		}
 	});
+
+
 	
 
 });
