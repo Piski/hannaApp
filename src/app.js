@@ -5,76 +5,76 @@ $(document).ready(function() {
 							"P", "R", "S", "T", "U", "F", "H", "TS", "CH", "SH", "SHCH", "IH", "E", "YU", "YA"];
 
 
-	var random = Math.floor(Math.random() * cyrilicArray.length);
-	$("#cyrillicContent").text(cyrilicArray[random]);
+	// Tehdään pari muuttuja
+	var arrayLength = cyrilicArray.length-1;
+	var rCyrillic = Math.floor(Math.random() * arrayLength);
+	var randomNumber;
+	var rNonCyrillic = new Array(4);
 
-	// Jos painetaan Enter
-	$("#nonCyrillicContent").keypress(function(e) {
-		if (e.which == 13) {
-			// Ota vastaus talteen ja tarkista onko vastaus oikein
+	// Printtaa kyriilinen
+	$("#cyrillicContent").text(cyrilicArray[rCyrillic]);
 
-			// Lopuksi tyhjennä kenttä
-			$("#nonCyrillicContent").val("");
+	// Asetetaan neljä satunnaista lukua taulukkoon rNonCyrillic
+	for(var i = 0; i < 3; i++) {
+		randomNumber = Math.floor(Math.random() * arrayLength);
+		if (uniqueNumber(randomNumber, rNonCyrillic)) {
+			rNonCyrillic[i] = randomNumber;
+		} else { i-- };
+	}
+
+	// Lisää oikea vastaus
+	 rNonCyrillic[3] = rCyrillic;
+	// Sekoitetaan taulukko
+	shuffle(rNonCyrillic)
+	// printtaa arvaukset sivulle
+	$("#left_top").text(nonCyrilicArray[rNonCyrillic[0]]);
+	$("#right_top").text(nonCyrilicArray[rNonCyrillic[1]]);
+	$("#left_bot").text(nonCyrilicArray[rNonCyrillic[2]]);
+	$("#right_bot").text(nonCyrilicArray[rNonCyrillic[3]]);
+
+	// Mitä painetaan?
+	$("#left_top").mouseup(function() {
+		if (rCyrillic == rNonCyrillic[0]) {
+			$("#left_top").css("color", "#7AB55C");
+		} else {
+			$("#left_top").css("color", "#E74C3C");
+		}
+	});
+	$("#right_top").mouseup(function() {
+		if (rCyrillic == rNonCyrillic[1]) {
+			$("#right_top").css("color", "#7AB55C");
+		} else {
+			$("#right_top").css("color", "#E74C3C");
+		}
+	});
+	$("#left_bot").mouseup(function() {
+		if (rCyrillic == rNonCyrillic[2]) {
+			$("#left_bot").css("color", "#7AB55C");
+		} else {
+			$("#left_bot").css("color", "#E74C3C");
+		}
+	});
+	$("#right_bot").mouseup(function() {
+		if (rCyrillic == rNonCyrillic[3]) {
+			$("#right_bot").css("color", "#7AB55C");
+		} else {
+			$("#right_bot").css("color", "#E74C3C");
 		}
 	});
 	
-	/* Älä välitä tästä. Tein alunperin PC:lle tavan kirjoittaa ilman tuota input field. Puhelimille tämä oli mahdotonta soveltaa
-	$(document).keypress(function(e) {
-        if(e.which == 97) {
-			$("#nonCyrillicContent").append("A")
-		} else if (e.which == 98) {
-			$("#nonCyrillicContent").append("B")
-		} else if (e.which == 99) {
-			$("#nonCyrillicContent").append("C")
-		} else if (e.which == 100) {
-			$("#nonCyrillicContent").append("D")
-		} else if (e.which == 101) {
-			$("#nonCyrillicContent").append("E")
-		} else if (e.which == 102) {
-			$("#nonCyrillicContent").append("F")
-		} else if (e.which == 103) {
-			$("#nonCyrillicContent").append("G")
-		} else if (e.which == 104) {
-			$("#nonCyrillicContent").append("H")
-		} else if (e.which == 105) {
-			$("#nonCyrillicContent").append("I")
-		} else if (e.which == 106) {
-			$("#nonCyrillicContent").append("J")
-		} else if (e.which == 107) {
-			$("#nonCyrillicContent").append("K")
-		} else if (e.which == 108) {
-			$("#nonCyrillicContent").append("L")
-		} else if (e.which == 109) {
-			$("#nonCyrillicContent").append("M")
-		} else if (e.which == 110) {
-			$("#nonCyrillicContent").append("N")
-		} else if (e.which == 111) {
-			$("#nonCyrillicContent").append("O")
-		} else if (e.which == 112) {
-			$("#nonCyrillicContent").append("P")
-		} else if (e.which == 113) {
-			$("#nonCyrillicContent").append("Q")
-		} else if (e.which == 114) {
-			$("#nonCyrillicContent").append("R")
-		} else if (e.which == 115) {
-			$("#nonCyrillicContent").append("S")
-		} else if (e.which == 116) {
-			$("#nonCyrillicContent").append("T")
-		} else if (e.which == 117) {
-			$("#nonCyrillicContent").append("U")
-		} else if (e.which == 118) {
-			$("#nonCyrillicContent").append("V")
-		} else if (e.which == 119) {
-			$("#nonCyrillicContent").append("W")
-		} else if (e.which == 120) {
-			$("#nonCyrillicContent").append("X")
-		} else if (e.which == 121) {
-			$("#nonCyrillicContent").append("Y")
-		} else if (e.which == 122) {
-			$("#nonCyrillicContent").append("Z")
-		} else if (e.which == 13) {
-			$("#nonCyrillicContent").html("");
-		}
-	});*/
-	
+
 });
+
+function uniqueNumber(num, rNonCyrillic) {
+	var unique = true;
+	for (var i = 0; i < rNonCyrillic.length-1; i++) {
+		if (num === rNonCyrillic[i]) 
+			unique = false; 
+	}
+	return unique;
+}
+
+function shuffle(array) {
+    for(var j, x, i = array.length; i; j = Math.floor(Math.random() * i), x = array[--i], array[i] = array[j], array[j] = x);
+    return array;
+};
