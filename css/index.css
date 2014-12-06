@@ -1,0 +1,47 @@
+* {
+	font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+html, body {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+ 	box-sizing: border-box;         /* Opera/IE 8+ */	
+ 	box-sizing: content-box;
+	margin: auto;
+ 	height: 100%;
+ 	overflow: hidden;
+	background-color: #E74C3C;
+}
+
+#container {
+	width: 100%;
+	font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+#buttons {
+	text-align: center;
+	height: 100%;
+	background-color: #E74C3C;
+}
+
+#play_letters {
+	background-color: #4B77BE;
+	border: none;
+	color: white;
+	border-radius: 6px;
+	width: 100%;
+	height: 10%;
+	font-size: 2em;
+	margin: auto;
+}
+
+#letters {
+	background-color: #4B77BE;
+	border: none;
+	color: white;
+	border-radius: 6px;
+	width: 100%;
+	height: 10%;
+	font-size: 2em;
+	margin: auto;
+}
