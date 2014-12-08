@@ -53,6 +53,7 @@ $(document).ready(function() {
 	var arrayLength = cyrillicArray.length-1;
 	var randomNumber;
 	var rNonCyrillic = new Array(4);
+	var correct;
 	window.rCyrillic;
 	window.points = 0;
 
@@ -60,42 +61,59 @@ $(document).ready(function() {
 	setPoints(points);
 
 	print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+	correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
 
 	// Mitä painetaan?
 	$("#left_top").mouseup(function() {
 		if (rCyrillic == rNonCyrillic[0]) {
 			correctAnswer("#left_top");
-			setTimeout(function() { print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray); }, 1000);
+			setTimeout(function() { 
+				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 1000);
 		} else {
-			wrongAnswer("#left_top");
-			setTimeout(function() { print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray); }, 1000);
+			wrongAnswer("#left_top", correct);
+			setTimeout(function() { 
+				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 2000);
 		}
 	});
 	$("#right_top").mouseup(function() {
 		if (rCyrillic == rNonCyrillic[1]) {
 			correctAnswer("#right_top");
-			setTimeout(function() { print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray); }, 1000);
+			setTimeout(function() { 
+				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 1000);
 		} else {
-			wrongAnswer("#right_top");
-			setTimeout(function() { print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray); }, 1000);
+			wrongAnswer("#right_top", correct);
+			setTimeout(function() { 
+				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 2000);
 		}
 	});
 	$("#left_bot").mouseup(function() {
 		if (rCyrillic == rNonCyrillic[2]) {
 			correctAnswer("#left_bot");
-			setTimeout(function() { print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray); }, 1000);
+			setTimeout(function() { 
+				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 1000);
 		} else {
-			wrongAnswer("#left_bot");
-			setTimeout(function() { print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray); }, 1000);
+			wrongAnswer("#left_bot", correct);
+			setTimeout(function() { 
+				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 2000);
 		}
 	});
 	$("#right_bot").mouseup(function() {
 		if (rCyrillic == rNonCyrillic[3]) {
 			correctAnswer("#right_bot");
-			setTimeout(function() { print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray); }, 1000);
+			setTimeout(function() { 
+				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 1000);
 		} else {
-			wrongAnswer("#right_bot");
-			setTimeout(function() { print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray); }, 1000);
+			wrongAnswer("#right_bot", correct);
+			setTimeout(function() { 
+				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 2000);
 		}
 	});
 
@@ -163,9 +181,31 @@ function correctAnswer(location) {
 	setPoints();
 };
 
-function wrongAnswer(location) {
+function wrongAnswer(location, loc_correct) {
 	$(location).css("background-color", "#E74C3C");
-	$(location).animate({"background-color": "#4B77BE"}, 1000);
+	$(location).animate({"background-color": "#4B77BE"}, 2000);
+
+	setTimeout(function() {
+	$(loc_correct).css("background-color", "#7AB55C");
+	$(loc_correct).animate({"background-color": "#4B77BE"}, 1000);
+	}, 1000);
+
 	points = 0;
 	setPoints();
+};
+
+function correctAnswerCheck(rCyrillic, rNonCyrillic) {
+
+	if (rCyrillic == rNonCyrillic[0]) {
+		return "#left_top";
+	}
+	else if (rCyrillic == rNonCyrillic[1]) {
+		return "#right_top";
+	}
+	else if (rCyrillic == rNonCyrillic[2]) {
+		return "#left_bot";
+	}
+	else {
+		return "#right_bot";
+	}
 };
