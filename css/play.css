@@ -50,6 +50,16 @@ html, body {
 	font-size: 2em;
 }
 
+#time {
+	float: right;
+	width: 5%;
+	height: 10%;
+	margin-right: 1%;
+	margin-top: 1%;
+	text-align: right;
+	font-size: 2em;
+}
+
 #cyrillicContent {
 	float: left;
 	width: 100%;

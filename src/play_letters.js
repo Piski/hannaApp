@@ -54,66 +54,197 @@ $(document).ready(function() {
 	var randomNumber;
 	var rNonCyrillic = new Array(4);
 	var correct;
+	var sec = 10;
 	window.rCyrillic;
 	window.points = 0;
 
 	// Tulosta pisteet
 	setPoints(points);
 
-	print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
-	correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+	// Asetetaan ajastin + printtaa kirjaimet + katsoo missä kohdassa oikea vastaus
+	var timer = setInterval(function() {
+		if (sec == 10) {
+			$("#time").text("00:" + sec);
+			print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+			correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+		}
+		else {
+			$("#time").text("00:0" + sec);
+		}
+		if (sec == 0) {
+				sec = 11;
+		}
+		sec--;
+			console.log(sec);
+	}, 1000);
 
 	// Mitä painetaan?
 	$("#left_top").mouseup(function() {
 		if (rCyrillic == rNonCyrillic[0]) {
+			clearInterval(timer);
 			correctAnswer("#left_top");
-			setTimeout(function() { 
-				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 1000);
+			sec = 10;
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+
+			}, 1000 ); }, 1000);
 		} else {
+			clearInterval(timer);
 			wrongAnswer("#left_top", correct);
-			setTimeout(function() { 
-				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 2000);
+			sec = 10;
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+			}, 1000 ); }, 2000);
 		}
 	});
 	$("#right_top").mouseup(function() {
 		if (rCyrillic == rNonCyrillic[1]) {
+			clearInterval(timer);
 			correctAnswer("#right_top");
-			setTimeout(function() { 
-				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 1000);
+			sec = 10;
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+
+			}, 1000 ); }, 1000);
 		} else {
+			clearInterval(timer);
 			wrongAnswer("#right_top", correct);
-			setTimeout(function() { 
-				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 2000);
+			sec = 10;
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+			}, 1000 ); }, 2000);
 		}
 	});
 	$("#left_bot").mouseup(function() {
 		if (rCyrillic == rNonCyrillic[2]) {
+			clearInterval(timer);
 			correctAnswer("#left_bot");
-			setTimeout(function() { 
-				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 1000);
+			sec = 10;
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+
+			}, 1000 ); }, 1000);
 		} else {
+			clearInterval(timer);
 			wrongAnswer("#left_bot", correct);
-			setTimeout(function() { 
-				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 2000);
+			sec = 10;
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+			}, 1000 ); }, 2000);
 		}
 	});
 	$("#right_bot").mouseup(function() {
 		if (rCyrillic == rNonCyrillic[3]) {
+			clearInterval(timer);
 			correctAnswer("#right_bot");
-			setTimeout(function() { 
-				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 1000);
+			sec = 10;
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+
+			}, 1000 ); }, 1000);
 		} else {
+			clearInterval(timer);
 			wrongAnswer("#right_bot", correct);
-			setTimeout(function() { 
-				print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 2000);
+			sec = 10;
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+			}, 1000 ); }, 2000);
 		}
 	});
 
@@ -209,3 +340,19 @@ function correctAnswerCheck(rCyrillic, rNonCyrillic) {
 		return "#right_bot";
 	}
 };
+
+function q() {
+		if (sec == 10) {
+			$("#time").text("00:" + sec);
+			print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+			correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+		}
+		else {
+			$("#time").text("00:0" + sec);
+		}
+		if (sec == 0) {
+				sec = 11;
+		}
+		sec--;
+			console.log(sec);
+}
