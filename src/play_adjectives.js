@@ -2,12 +2,12 @@ $(document).ready(function() {
 	// http://blogs.transparent.com/russian/100-must-know-russian-words-and-how-to-learn-them/
 	
 	// Letters
-	
+	/*
 	var cyrillicArray = ["A", "Б", "В", "Г", "Д", "Е", "Ё", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "O",
 						"П", "Р", "C", "T", "Y", "Ф", "X", "Ц", "Ч", "Ш", "Щ", "Ы", "Э", "Ю", "Я"];
 	var nonCyrillicArray = ["A", "B", "V", "G", "D", "YE", "YO", "ZH", "Z", "I", "J", "K", "L", "M", "N", "O",
 							"P", "R", "S", "T", "U", "F", "H", "TS", "CH", "SH", "SHCH", "IH", "E", "YU", "YA"];
-	
+	*/
 	
 	// Nouns
 	/*
@@ -26,12 +26,12 @@ $(document).ready(function() {
 	*/
 
 	// Adjectives
-	/*
+	
 	var cyrillicArray = ["новый", "большой", "должен", "последний", "российский", "общий", "высокий", "хороший", "главный", "лучший", "маленький", "молодой", "государственный", "полный", "советский", "настоящий",
 						"старый", "разный", "нужный", "белый", "собственный", "чёрный", "основной", "далёкий"];
 	var nonCyrillicArray = ["new", "large", "have to", "last", "Russian", "common", "tall", "good", "main", "the best", "small", "young", "public", "full", "Soviet", "real",
 							"old", "different", "necessary", "white", "own", "black", "main", "distant"];
-	*/
+	
 
 	// Adverbs
 	/*

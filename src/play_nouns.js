@@ -3,19 +3,20 @@ $(document).ready(function() {
 	
 	// Letters
 	
+	/*
 	var cyrillicArray = ["A", "Б", "В", "Г", "Д", "Е", "Ё", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "O",
 						"П", "Р", "C", "T", "Y", "Ф", "X", "Ц", "Ч", "Ш", "Щ", "Ы", "Э", "Ю", "Я"];
 	var nonCyrillicArray = ["A", "B", "V", "G", "D", "YE", "YO", "ZH", "Z", "I", "J", "K", "L", "M", "N", "O",
 							"P", "R", "S", "T", "U", "F", "H", "TS", "CH", "SH", "SHCH", "IH", "E", "YU", "YA"];
-	
+	*/
 	
 	// Nouns
-	/*
+	
 	var cyrilicArray = ["год", "человек", "время", "дело", "жизнь", "день", "рука", "раз", "работа", "слово", "место", "лицо", "друг", "глаз", "вопрос", "дом",
 						"сторона", "страна", "мир", "случай", "голова", "ребенок", "сила", "конец", "вид"];
 	var nonCyrilicArray = ["year", "person", "time", "affair", "life", "day", "arm", "once", "work", "word", "place", "face", "friend", "eye", "question", "house",
 							"side", "country", "world", "instance", "head", "child", "force", "end", "view"];
-	*/
+	
 
 	// Verbs
 	/*

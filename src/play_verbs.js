@@ -3,11 +3,12 @@ $(document).ready(function() {
 	
 	// Letters
 	
+	/*
 	var cyrillicArray = ["A", "Б", "В", "Г", "Д", "Е", "Ё", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "O",
 						"П", "Р", "C", "T", "Y", "Ф", "X", "Ц", "Ч", "Ш", "Щ", "Ы", "Э", "Ю", "Я"];
 	var nonCyrillicArray = ["A", "B", "V", "G", "D", "YE", "YO", "ZH", "Z", "I", "J", "K", "L", "M", "N", "O",
 							"P", "R", "S", "T", "U", "F", "H", "TS", "CH", "SH", "SHCH", "IH", "E", "YU", "YA"];
-	
+	*/
 	
 	// Nouns
 	/*
@@ -18,12 +19,12 @@ $(document).ready(function() {
 	*/
 
 	// Verbs
-	/*
+	
 	var cyrillicArray = ["быть", "бить", "мочь", "сказать", "говорить", "знать", "стать", "хотеть", "идти", "иметь", "видеть", "думать", "сделать", "жить", "делать", "смотреть",
 						"работать", "понять", "пойти", "спросить", "дать", "понимать", "получить", "сидеть", "оказаться", "взять"];
 	var nonCyrillicArray = ["to be", "to hit", "to be able", "to say", "to speak", "to know", "to become", "to want", "to go", "to have", "to see", "to think", "to make", "to live", "to do", "to watch",
 							"to work", "to understand", "to go", "to ask", "to give", "to understand", "to receive", "to sit", "to happen", "to take"];
-	*/
+	
 
 	// Adjectives
 	/*

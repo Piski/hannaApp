@@ -29,9 +29,70 @@ html, body {
 	border: none;
 	color: white;
 	border-radius: 6px;
-	width: 100%;
+	width: 60%;
 	height: 10%;
-	font-size: 2em;
+	font-size: 3em;
+	padding: 10px;
+	margin: auto;
+}
+
+#play_nouns {
+	background-color: #4B77BE;
+	border: none;
+	color: white;
+	border-radius: 6px;
+	width: 60%;
+	height: 10%;
+	font-size: 3em;
+	padding: 10px;
+	margin: auto;
+}
+
+#play_verbs {
+	background-color: #4B77BE;
+	border: none;
+	color: white;
+	border-radius: 6px;
+	width: 60%;
+	height: 10%;
+	font-size: 3em;
+	padding: 10px;
+	margin: auto;
+}
+
+#play_adjectives {
+	background-color: #4B77BE;
+	border: none;
+	color: white;
+	border-radius: 6px;
+	width: 60%;
+	height: 10%;
+	font-size: 3em;
+	padding: 10px;
+	margin: auto;
+}
+
+#play_adverbs {
+	background-color: #4B77BE;
+	border: none;
+	color: white;
+	border-radius: 6px;
+	width: 60%;
+	height: 10%;
+	font-size: 3em;
+	padding: 10px;
+	margin: auto;
+}
+
+#play_mustKnowns {
+	background-color: #4B77BE;
+	border: none;
+	color: white;
+	border-radius: 6px;
+	width: 60%;
+	height: 10%;
+	font-size: 3em;
+	padding: 10px;
 	margin: auto;
 }
 
@@ -40,8 +101,9 @@ html, body {
 	border: none;
 	color: white;
 	border-radius: 6px;
-	width: 100%;
+	width: 60%;
 	height: 10%;
-	font-size: 2em;
+	font-size: 3em;
+	padding: 10px;
 	margin: auto;
 }

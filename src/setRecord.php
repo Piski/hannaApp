@@ -1,9 +1,13 @@
 <?php
 // http://www.tutorialspoint.com/php/mysql_insert_php.htm
 
+if (isset($_GET["record"])) {
+      $newRecord = $_GET["record"];
+    }
+
 $servername = "mysql.metropolia.fi";
 $username = "m0602227";
-$password = "SALASANA";
+$password = "shemtov1";
 $dbname = "m0602227";
 
 // Create connection
@@ -13,8 +17,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO record (record)
-VALUES (5)";
+$sql = "UPDATE record_letters SET record=" . $newRecord . " where id=0";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
