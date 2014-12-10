@@ -290,6 +290,7 @@ function setRecord() {
 		success: function() { console.log("new record set"); }
 	}).done(function(data) {
 		// eipä oikein tarvi tehdä mitään.
+		$("#record").text(record);
 	});
 };
 
@@ -297,7 +298,7 @@ function setRecord() {
 function setPoints() {
 	getRecord();
 	$("#points").text(points);
-	//$("#record").text(record);
+	$("#record").text(record);
 	isRecord();
 };
 
@@ -329,7 +330,6 @@ function print(arrayLength, rNonCyrillic, cyrilicArray, nonCyrillicArray) {
 function correctAnswer(location) {
 	$(location).css("background-color", "#7AB55C");
 	$(location).animate({"background-color": "#4B77BE"}, 1000);
-	console.log(points);
 	points++;
 	setPoints();
 };

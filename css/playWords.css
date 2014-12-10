@@ -108,7 +108,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 10em;
+	font-size: 7em;
 }
 
 #right_top {
@@ -119,7 +119,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 10em;
+	font-size: 7em;
 }
 
 #left_bot {
@@ -130,7 +130,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 10em;
+	font-size: 7em;
 }
 
 #right_bot {
@@ -141,7 +141,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 10em;
+	font-size: 7em;
 }
 
 @media screen and (max-width: 1499px) {
@@ -208,7 +208,7 @@ html, body {
 	height: 100%;
 	margin-top: 1%;
 	text-align: center;
-	font-size: 13em;
+	font-size: 10em;
 	background-color: #E74C3C;
 	padding-bottom: 1%;
 }
@@ -238,7 +238,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 7em;
+	font-size: 4em;
 }
 
 #right_top {
@@ -249,7 +249,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 7em;
+	font-size: 4em;
 }
 
 #left_bot {
@@ -260,7 +260,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 7em;
+	font-size: 4em;
 }
 
 #right_bot {
@@ -271,11 +271,11 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 7em;
+	font-size: 4em;
 }
 }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-device-width: 799px) {
 	* {
 	font-family: 'Ubuntu Condensed', sans-serif;
 }
@@ -339,7 +339,7 @@ html, body {
 	height: 100%;
 	margin-top: 1%;
 	text-align: center;
-	font-size: 11em;
+	font-size: 5em;
 	background-color: #E74C3C;
 	padding-bottom: 1%;
 }
@@ -365,43 +365,43 @@ html, body {
 	line-height: 150%;
 	float: left;
 	border: none;
-	width: 50%;
+	width: 100%;
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 5em;
+	font-size: 4em;
 }
 
 #right_top {
 	line-height: 150%;
 	float: left;
 	border: none;
-	width: 50%;
+	width: 100%;
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 5em;
+	font-size: 4em;
 }
 
 #left_bot {
 	line-height: 150%;
 	float: left;
 	border: none;
-	width: 50%;
-	height: 50%;
+	width: 100%;
+	height: 100%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 5em;
+	font-size: 4em;
 }
 
 #right_bot {
 	line-height: 150%;
 	float: left;
 	border: none;
-	width: 50%;
-	height: 50%;
+	width: 100%;
+	height: 100%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 5em;
+	font-size: 4em;
 }
 }
