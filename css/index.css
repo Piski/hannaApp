@@ -1,3 +1,16 @@
+*.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
+
 * {
 	font-family: 'Ubuntu Condensed', sans-serif;
 }
@@ -29,9 +42,9 @@ html, body {
 	border: none;
 	color: white;
 	border-radius: 6px;
-	width: 60%;
+	width: 70%;
 	height: 10%;
-	font-size: 3em;
+	font-size: 2em;
 	padding: 10px;
 	margin: auto;
 }
@@ -41,9 +54,9 @@ html, body {
 	border: none;
 	color: white;
 	border-radius: 6px;
-	width: 60%;
+	width: 70%;
 	height: 10%;
-	font-size: 3em;
+	font-size: 2em;
 	padding: 10px;
 	margin: auto;
 }
@@ -53,9 +66,9 @@ html, body {
 	border: none;
 	color: white;
 	border-radius: 6px;
-	width: 60%;
+	width: 70%;
 	height: 10%;
-	font-size: 3em;
+	font-size: 2em;
 	padding: 10px;
 	margin: auto;
 }
@@ -65,9 +78,9 @@ html, body {
 	border: none;
 	color: white;
 	border-radius: 6px;
-	width: 60%;
+	width: 70%;
 	height: 10%;
-	font-size: 3em;
+	font-size: 2em;
 	padding: 10px;
 	margin: auto;
 }
@@ -77,9 +90,9 @@ html, body {
 	border: none;
 	color: white;
 	border-radius: 6px;
-	width: 60%;
+	width: 70%;
 	height: 10%;
-	font-size: 3em;
+	font-size: 2em;
 	padding: 10px;
 	margin: auto;
 }
@@ -89,9 +102,9 @@ html, body {
 	border: none;
 	color: white;
 	border-radius: 6px;
-	width: 60%;
+	width: 70%;
 	height: 10%;
-	font-size: 3em;
+	font-size: 2em;
 	padding: 10px;
 	margin: auto;
 }
@@ -101,9 +114,9 @@ html, body {
 	border: none;
 	color: white;
 	border-radius: 6px;
-	width: 60%;
+	width: 70%;
 	height: 10%;
-	font-size: 3em;
+	font-size: 2em;
 	padding: 10px;
 	margin: auto;
 }

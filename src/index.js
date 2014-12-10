@@ -32,7 +32,7 @@ $(document).ready(function() {
 	// letters
 	$("#play_letters").mouseup(function() {
     $.ajax({
-		url: "html/play_letters.html",
+		url: "play_letters.html",
 		type: "get",
 		dataType: "html"
 	}).done(function(data)  {
@@ -42,7 +42,7 @@ $(document).ready(function() {
 	// nouns
 	$("#play_nouns").mouseup(function() {
     $.ajax({
-		url: "html/play_nouns.html",
+		url: "play_nouns.html",
 		type: "get",
 		dataType: "html"
 	}).done(function(data)  {
@@ -52,7 +52,7 @@ $(document).ready(function() {
 	//verbs
 	$("#play_verbs").mouseup(function() {
     $.ajax({
-		url: "html/play_verbs.html",
+		url: "play_verbs.html",
 		type: "get",
 		dataType: "html"
 	}).done(function(data)  {
@@ -62,7 +62,7 @@ $(document).ready(function() {
 	// adjectives
 	$("#play_adjectives").mouseup(function() {
     $.ajax({
-		url: "html/play_adjectives.html",
+		url: "play_adjectives.html",
 		type: "get",
 		dataType: "html"
 	}).done(function(data)  {
@@ -72,7 +72,7 @@ $(document).ready(function() {
 	//adverbs
 	$("#play_adverbs").mouseup(function() {
     $.ajax({
-		url: "html/play_adverbs.html",
+		url: "play_adverbs.html",
 		type: "get",
 		dataType: "html"
 	}).done(function(data)  {
@@ -82,7 +82,7 @@ $(document).ready(function() {
 	// must knowns
 	$("#play_mustKnowns").mouseup(function() {
     $.ajax({
-		url: "html/play_mustKnowns.html",
+		url: "play_mustKnowns.html",
 		type: "get",
 		dataType: "html"
 	}).done(function(data)  {

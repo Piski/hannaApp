@@ -1,4 +1,8 @@
 <?php
+if (isset($_GET["game"])) {
+	  $game = $_GET["game"];
+    }
+
 $servername = "mysql.metropolia.fi";
 $username = "m0602227";
 $password = "shemtov1";
@@ -11,7 +15,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM record_letters WHERE id=0";
+$sql = "SELECT * FROM record_" . $game . " " . "WHERE id=0";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
