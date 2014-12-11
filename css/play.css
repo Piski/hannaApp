@@ -429,7 +429,7 @@ html, body {
 	height: 100%;
 	margin-top: 1%;
 	text-align: center;
-	font-size: 10em;
+	font-size: 9em;
 	background-color: #E74C3C;
 	padding-bottom: 1%;
 }
@@ -459,7 +459,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 5em;
+	font-size: 4em;
 }
 
 #right_top {
@@ -470,7 +470,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 5em;
+	font-size: 4em;
 }
 
 #left_bot {
@@ -481,7 +481,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 5em;
+	font-size: 4em;
 }
 
 #right_bot {
@@ -492,7 +492,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 5em;
+	font-size: 4em;
 }
 
 #back_button {
