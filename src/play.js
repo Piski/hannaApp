@@ -60,10 +60,10 @@ $(document).ready(function() {
 	var rNonCyrillic = new Array(4);
 	var correct;
 	var sec = 10;
+	var bool = true;
 	window.rCyrillic;
 	window.points = 0;
 	window.record;
-	window.correct;
 
 	// Tulosta pisteet
 	setPoints(points);
@@ -74,98 +74,151 @@ $(document).ready(function() {
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
 				}, 1000 );
 
+
+
+
 	// Mitä painetaan?
 	$("#left_top").mouseup(function() {
+	//vain kun bool on true voidaan painaa vastauksia --> ei voi painaa nappia useasti --> peli ei sekoa
+	if (bool) {
 		if (rCyrillic == rNonCyrillic[0]) {
+			bool = !bool;
+			console.log(bool);
 			clearInterval(timer);
 			correctAnswer("#left_top");
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				}, 1000 ); }, 1000);
+				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 1000 );
+			}, 1000);
+			setTimeout(function() {
+				bool = !bool; 
+				console.log("2 " + bool);
+			}, 2000);
 		} else {
+			bool = !bool;
+			console.log(bool);
 			clearInterval(timer);
 			wrongAnswer("#left_top", correct);
 			sec = 10;
-			setTimeout(function() { timer = setInterval(function() { 
+			setTimeout(function() { 
+				timer = setInterval(function() {
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				}, 1000 ); }, 2000);
+				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 1000 ); 
+			}, 2000);
+			setTimeout(function() {
+				bool = !bool; 
+				console.log("2 " + bool);
+			}, 3000);
 		}
+	} else {
+		console.log("booli false");
+	}
 	});
+
 	$("#right_top").mouseup(function() {
+	if (bool) {
 		if (rCyrillic == rNonCyrillic[1]) {
+			bool = !bool;
 			clearInterval(timer);
 			correctAnswer("#right_top");
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				bool = !bool;
 				}, 1000 ); }, 1000);
 		} else {
+			bool = !bool;
 			clearInterval(timer);
 			wrongAnswer("#right_top", correct);
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				bool = !bool;
 				}, 1000 ); }, 2000);
 		}
+	} else {
+		console.log("booli false");
+	}
 	});
+
 	$("#left_bot").mouseup(function() {
+	if (bool) {
 		if (rCyrillic == rNonCyrillic[2]) {
+			bool = !bool;
 			clearInterval(timer);
 			correctAnswer("#left_bot");
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				bool = !bool;
 				}, 1000 ); }, 1000);
 		} else {
+			bool = !bool;
 			clearInterval(timer);
 			wrongAnswer("#left_bot", correct);
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				bool = !bool;
 				}, 1000 ); }, 2000);
 		}
+	} else {
+		console.log("booli false");
+	}
 	});
+
 	$("#right_bot").mouseup(function() {
+	if (bool) {
 		if (rCyrillic == rNonCyrillic[3]) {
+			bool = !bool;
 			clearInterval(timer);
 			correctAnswer("#right_bot");
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				bool = !bool;
 				}, 1000 ); }, 1000);
 		} else {
+			bool = !bool;
 			clearInterval(timer);
 			wrongAnswer("#right_bot", correct);
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				bool = !bool;
 				}, 1000 ); }, 2000);
 		}
+	} else {
+		console.log("booli false");
+	}
 	});
-
+	
 	//back-nappia painettaessa timer nollautuu + back-nappi muuttuu vihreäksi + avataan index.html
 	$("#back").mousedown("click", function(){
-	  $(this).css("background-color", "#7AB55C");
-	  clearInterval(timer);
+	 	$(this).css("background-color", "#7AB55C");
 	});
 
-	$("#back").mouseup(function() {
-    $.ajax({
-		url: "index.html",
-		type: "get",
-		dataType: "html"
-	}).done(function(data)  {
-		$("body").html(data).slideDown(1000);
-	});
+	$("#back").mouseup(function wait() {
+		//odotetaan että bool = true ettei timer sekoo
+		if (bool) {
+			clearInterval(timer);
+    		$.ajax({
+				url: "index.html",
+				type: "get",
+				dataType: "html"
+			}).done(function(data)  {
+				$("body").html(data).slideDown(1000);
+			});
+		} else {
+			setTimeout(function() { wait(); }, 100);
+		}
 	});
 
 });
@@ -271,7 +324,6 @@ function wrongAnswer(location, loc_correct) {
 };
 
 function correctAnswerCheck(rCyrillic, rNonCyrillic) {
-
 	if (rCyrillic == rNonCyrillic[0]) {
 		return "#left_top";
 	}
@@ -288,18 +340,20 @@ function correctAnswerCheck(rCyrillic, rNonCyrillic) {
 
 //kun sekunnit = 10 -> printataan uudet kirjaimet, jos sec = 0 -> nollataan pisteet ja asetetaan sekunnit takaisin 10:een (11-1) 
 function time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec) {
-				if (sec == 10) {
-					$("#time").text("00:" + sec);
-					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
-				}
-				else {
-					$("#time").text("00:0" + sec);
-				}
-				if (sec == 0) {
-					sec = 11;
-					points = 0;
-					setPoints();
-				}
-				sec--;
-				return sec;
-			}
+	if (sec == 10) {
+		$("#time").text("00:" + sec);
+			print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+	} else {
+		$("#time").text("00:0" + sec);
+	}
+	if (sec == 0) {
+		sec = 11;
+		points = 0;
+		setPoints();
+		var correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+		$(correct).css("background-color", "#7AB55C");
+		$(correct).animate({"background-color": "#4B77BE"}, 1000);
+	}
+	sec--;
+	return sec;
+}
