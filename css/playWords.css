@@ -39,7 +39,7 @@ html, body {
 }
 #cyrillic {
 	float: left;
-	height: 50%;
+	height: 39%;
 	width: 100%;
 	background-color: #E74C3C;
 }
@@ -85,7 +85,7 @@ html, body {
 
 #nonCyrillic {
 	float: left;
-	height: 50%;
+	height: 39%;
 	width: 100%;
 	background-color: #4B77BE;
 }
@@ -144,6 +144,27 @@ html, body {
 	font-size: 7em;
 }
 
+#back_button {
+	float: left;
+	width: 100%;
+	height: 22%;
+	text-align: center;
+	background-color: #4B77BE;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+#back {
+	width: 10%;
+	height: 100%;
+	text-align: center;
+	border: none;
+	border-radius: 6px;
+	background-color: #E74C3C;	
+	color: white;
+	font-size: 2em;
+}
+
 @media screen and (max-width: 1499px) {
 	* {
 	font-family: 'Ubuntu Condensed', sans-serif;
@@ -169,7 +190,7 @@ html, body {
 }
 #cyrillic {
 	float: left;
-	height: 50%;
+	height: 39%;
 	width: 100%;
 	background-color: #E74C3C;
 }
@@ -215,7 +236,7 @@ html, body {
 
 #nonCyrillic {
 	float: left;
-	height: 50%;
+	height: 39%;
 	width: 100%;
 	background-color: #4B77BE;
 }
@@ -238,7 +259,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 4em;
+	font-size: 6em;
 }
 
 #right_top {
@@ -249,7 +270,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 4em;
+	font-size: 6em;
 }
 
 #left_bot {
@@ -260,7 +281,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 4em;
+	font-size: 6em;
 }
 
 #right_bot {
@@ -271,7 +292,28 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 4em;
+	font-size: 6em;
+}
+
+#back_button {
+	float: left;
+	width: 100%;
+	height: 22%;
+	text-align: center;
+	background-color: #4B77BE;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+#back {
+	width: 10%;
+	height: 100%;
+	text-align: center;
+	border: none;
+	border-radius: 6px;
+	background-color: #E74C3C;	
+	color: white;
+	font-size: 2em;
 }
 }
 
@@ -369,7 +411,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 4em;
+	font-size: 3em;
 }
 
 #right_top {
@@ -380,7 +422,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 4em;
+	font-size: 3em;
 }
 
 #left_bot {
@@ -391,7 +433,7 @@ html, body {
 	height: 100%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 4em;
+	font-size: 3em;
 }
 
 #right_bot {
@@ -402,6 +444,27 @@ html, body {
 	height: 100%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 4em;
+	font-size: 3em;
+}
+
+#back_button {
+	float: left;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background-color: #4B77BE;
+	margin-top: 3%;
+	margin-bottom: 1%
+}
+
+#back {
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	border: none;
+	border-radius: 6px;
+	background-color: #E74C3C;	
+	color: white;
+	font-size: 2em;
 }
 }

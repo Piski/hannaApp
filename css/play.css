@@ -39,7 +39,7 @@ html, body {
 }
 #cyrillic {
 	float: left;
-	height: 50%;
+	height: 39%;
 	width: 100%;
 	background-color: #E74C3C;
 }
@@ -78,26 +78,16 @@ html, body {
 	height: 100%;
 	margin-top: 1%;
 	text-align: center;
-	font-size: 21em;
+	font-size: 19em;
 	background-color: #E74C3C;
 	padding-bottom: 1%;
 }
 
 #nonCyrillic {
 	float: left;
-	height: 50%;
+	height: 39%;
 	width: 100%;
 	background-color: #4B77BE;
-}
-
-#nonCyrillicContent {
-	float: left;
-	border: none;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	background-color: #4B77BE;
-	color: white
 }
 
 #left_top {
@@ -108,7 +98,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 10em;
+	font-size: 8em;
 }
 
 #right_top {
@@ -119,7 +109,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 10em;
+	font-size: 8em;
 }
 
 #left_bot {
@@ -130,7 +120,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 10em;
+	font-size: 8em;
 }
 
 #right_bot {
@@ -141,7 +131,27 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 10em;
+	font-size: 8em;
+}
+
+#back_button {
+	float: left;
+	width: 100%;
+	height: 22%;
+	text-align: center;
+	background-color: #4B77BE;
+	margin-top: 1%;
+}
+
+#back {
+	width: 10%;
+	height: 100%;
+	text-align: center;
+	border: none;
+	border-radius: 6px;
+	background-color: #E74C3C;	
+	color: white;
+	font-size: 2em;
 }
 
 @media screen and (max-width: 1499px) {
@@ -169,7 +179,7 @@ html, body {
 }
 #cyrillic {
 	float: left;
-	height: 50%;
+	height: 39%;
 	width: 100%;
 	background-color: #E74C3C;
 }
@@ -213,9 +223,10 @@ html, body {
 	padding-bottom: 1%;
 }
 
+
 #nonCyrillic {
 	float: left;
-	height: 50%;
+	height: 39%;
 	width: 100%;
 	background-color: #4B77BE;
 }
@@ -238,7 +249,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 7em;
+	font-size: 6em;
 }
 
 #right_top {
@@ -249,7 +260,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 7em;
+	font-size: 6em;
 }
 
 #left_bot {
@@ -260,7 +271,7 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 7em;
+	font-size: 6em;
 }
 
 #right_bot {
@@ -271,7 +282,27 @@ html, body {
 	height: 50%;
 	text-align: center;
 	background-color: #4B77BE;
-	font-size: 7em;
+	font-size: 6em;
+}
+
+#back_button {
+	float: left;
+	width: 100%;
+	height: 22%;
+	text-align: center;
+	background-color: #4B77BE;
+	margin-top: 1%;
+}
+
+#back {
+	width: 10%;
+	height: 100%;
+	text-align: center;
+	border: none;
+	border-radius: 6px;
+	background-color: #E74C3C;	
+	color: white;
+	font-size: 2em;
 }
 }
 
@@ -339,7 +370,7 @@ html, body {
 	height: 100%;
 	margin-top: 1%;
 	text-align: center;
-	font-size: 11em;
+	font-size: 10em;
 	background-color: #E74C3C;
 	padding-bottom: 1%;
 }
@@ -403,5 +434,26 @@ html, body {
 	text-align: center;
 	background-color: #4B77BE;
 	font-size: 5em;
+}
+
+#back_button {
+	float: left;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background-color: #4B77BE;
+	padding-bottom: 50%;
+	margin-top: 3%;
+}
+
+#back {
+	width: 40%;
+	height: 100%;
+	text-align: center;
+	border: none;
+	border-radius: 6px;
+	background-color: #E74C3C;	
+	color: white;
+	font-size: 2em;
 }
 }

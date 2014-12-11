@@ -1,58 +1,53 @@
 $(document).ready(function() {
 	// http://blogs.transparent.com/russian/100-must-know-russian-words-and-how-to-learn-them/
-	window.game;
-	// Haetaan html:n title tag:sta nimi.
-	var title = document.body.getElementsByTagName('title');
-	console.log(title);
-	query = title[0].text;
-	console.log(query);
 	
-	// Asetetaan taulukot riippuen mikä html kutsuu scriptiä.
-	if (query == "Letters") {
 	// Letters
-	game = "letters";
+	
 	var cyrillicArray = ["A", "Б", "В", "Г", "Д", "Е", "Ё", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "O",
 						"П", "Р", "C", "T", "Y", "Ф", "X", "Ц", "Ч", "Ш", "Щ", "Ы", "Э", "Ю", "Я"];
 	var nonCyrillicArray = ["A", "B", "V", "G", "D", "YE", "YO", "ZH", "Z", "I", "J", "K", "L", "M", "N", "O",
 							"P", "R", "S", "T", "U", "F", "H", "TS", "CH", "SH", "SHCH", "IH", "E", "YU", "YA"];
-	} else if (query == "Nouns") {
+	
+	
 	// Nouns
-	game = "nouns";
-	var cyrillicArray = ["год", "человек", "время", "дело", "жизнь", "день", "рука", "раз", "работа", "слово", "место", "лицо", "друг", "глаз", "вопрос", "дом",
+	/*
+	var cyrilicArray = ["год", "человек", "время", "дело", "жизнь", "день", "рука", "раз", "работа", "слово", "место", "лицо", "друг", "глаз", "вопрос", "дом",
 						"сторона", "страна", "мир", "случай", "голова", "ребенок", "сила", "конец", "вид"];
-	var nonCyrillicArray = ["year", "person", "time", "affair", "life", "day", "arm", "once", "work", "word", "place", "face", "friend", "eye", "question", "house",
+	var nonCyrilicArray = ["year", "person", "time", "affair", "life", "day", "arm", "once", "work", "word", "place", "face", "friend", "eye", "question", "house",
 							"side", "country", "world", "instance", "head", "child", "force", "end", "view"];
-	} else if (query == "Verbs") {
+	*/
+
 	// Verbs
-	game = "verbs";
+	/*
 	var cyrillicArray = ["быть", "бить", "мочь", "сказать", "говорить", "знать", "стать", "хотеть", "идти", "иметь", "видеть", "думать", "сделать", "жить", "делать", "смотреть",
 						"работать", "понять", "пойти", "спросить", "дать", "понимать", "получить", "сидеть", "оказаться", "взять"];
 	var nonCyrillicArray = ["to be", "to hit", "to be able", "to say", "to speak", "to know", "to become", "to want", "to go", "to have", "to see", "to think", "to make", "to live", "to do", "to watch",
 							"to work", "to understand", "to go", "to ask", "to give", "to understand", "to receive", "to sit", "to happen", "to take"];
-	} else if (query == "Adjectives") {
+	*/
+
 	// Adjectives
-	game = "adjectives";
+	/*
 	var cyrillicArray = ["новый", "большой", "должен", "последний", "российский", "общий", "высокий", "хороший", "главный", "лучший", "маленький", "молодой", "государственный", "полный", "советский", "настоящий",
 						"старый", "разный", "нужный", "белый", "собственный", "чёрный", "основной", "далёкий"];
 	var nonCyrillicArray = ["new", "large", "have to", "last", "Russian", "common", "tall", "good", "main", "the best", "small", "young", "public", "full", "Soviet", "real",
 							"old", "different", "necessary", "white", "own", "black", "main", "distant"];
-	} else if (query == "Adverbs") {
+	*/
+
 	// Adverbs
-	game = "adverbs";
+	/*
 	var cyrillicArray = ["ещё", "уже", "очень", "можно", "надо", "нет", "тоже", "более", "конечно", "также", "вдруг", "почти", "сразу", "хорошо", "сегодня", "совсем",
 						"вообще", "больше", "вместе", "например", "нужно", "опять", "нельзя", "особенно"];
 	var nonCyrillicArray = ["more", "already", "very", "may", "need", "no", "also", "more", "of course", "as well", "suddenly", "almost", "immediately", "good", "today", "completely",
 							"generally", "more", "together", "for example", "need", "again", "cannot", "especially"];
-	} else if (query == "MustKnowns") {
+	*/
+
 	// Must know words
-	game = "mustKnowns";
+	/*
 	var cyrillicArray = ["я", "он", "это", "она", "они", "мы", "который", "то", "что", "свой", "весь", "так", "ты", "все", "всё",
 						"вы", "такой", "его", "себя", "один", "как", "сам", "другой", "наш"];
 	var nonCyrillicArray = ["I", "he", "this", "she", "they", "we", "which", "that", "what", "one’s own", "entire", "so", "you", "everyone", "all", "you",
 							"such", "his", "oneself", "one", "how", "self", "another", "our"];
-	} else {
-		console.log("An error has occured setting up the arrays");
-	};
+	*/
 
 	// Tehdään pari muuttuja
 	var arrayLength = cyrillicArray.length-1;
@@ -62,17 +57,26 @@ $(document).ready(function() {
 	var sec = 10;
 	window.rCyrillic;
 	window.points = 0;
-	window.record;
-	window.correct;
 
 	// Tulosta pisteet
 	setPoints(points);
 
 	// Asetetaan ajastin + printtaa kirjaimet + katsoo missä kohdassa oikea vastaus
-	var timer = setInterval(function() { 
-				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				}, 1000 );
+	var timer = setInterval(function() {
+		if (sec == 10) {
+			$("#time").text("00:" + sec);
+			print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+			correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+		}
+		else {
+			$("#time").text("00:0" + sec);
+		}
+		if (sec == 0) {
+				sec = 11;
+		}
+		sec--;
+			console.log(sec);
+	}, 1000);
 
 	// Mitä painetaan?
 	$("#left_top").mouseup(function() {
@@ -80,18 +84,41 @@ $(document).ready(function() {
 			clearInterval(timer);
 			correctAnswer("#left_top");
 			sec = 10;
-			setTimeout(function() { timer = setInterval(function() { 
-				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				}, 1000 ); }, 1000);
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+
+			}, 1000 ); }, 1000);
 		} else {
 			clearInterval(timer);
 			wrongAnswer("#left_top", correct);
 			sec = 10;
-			setTimeout(function() { timer = setInterval(function() { 
-				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				}, 1000 ); }, 2000);
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+			}, 1000 ); }, 2000);
 		}
 	});
 	$("#right_top").mouseup(function() {
@@ -99,18 +126,41 @@ $(document).ready(function() {
 			clearInterval(timer);
 			correctAnswer("#right_top");
 			sec = 10;
-			setTimeout(function() { timer = setInterval(function() { 
-				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				}, 1000 ); }, 1000);
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+
+			}, 1000 ); }, 1000);
 		} else {
 			clearInterval(timer);
 			wrongAnswer("#right_top", correct);
 			sec = 10;
-			setTimeout(function() { timer = setInterval(function() { 
-				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				}, 1000 ); }, 2000);
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+			}, 1000 ); }, 2000);
 		}
 	});
 	$("#left_bot").mouseup(function() {
@@ -118,18 +168,41 @@ $(document).ready(function() {
 			clearInterval(timer);
 			correctAnswer("#left_bot");
 			sec = 10;
-			setTimeout(function() { timer = setInterval(function() { 
-				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				}, 1000 ); }, 1000);
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+
+			}, 1000 ); }, 1000);
 		} else {
 			clearInterval(timer);
 			wrongAnswer("#left_bot", correct);
 			sec = 10;
-			setTimeout(function() { timer = setInterval(function() { 
-				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				}, 1000 ); }, 2000);
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+			}, 1000 ); }, 2000);
 		}
 	});
 	$("#right_bot").mouseup(function() {
@@ -137,39 +210,45 @@ $(document).ready(function() {
 			clearInterval(timer);
 			correctAnswer("#right_bot");
 			sec = 10;
-			setTimeout(function() { timer = setInterval(function() { 
-				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				}, 1000 ); }, 1000);
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+
+			}, 1000 ); }, 1000);
 		} else {
 			clearInterval(timer);
 			wrongAnswer("#right_bot", correct);
 			sec = 10;
-			setTimeout(function() { timer = setInterval(function() { 
-				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				}, 1000 ); }, 2000);
+			setTimeout(function() { timer = setInterval(function() {
+				if (sec == 10) {
+					$("#time").text("00:" + sec);
+					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+					correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				}
+				else {
+					$("#time").text("00:0" + sec);
+				}
+				if (sec == 0) {
+					sec = 11;
+				}
+				sec--;
+				console.log(sec);
+			}, 1000 ); }, 2000);
 		}
 	});
 
-	$("#back").mouseup(function() {
-    $.ajax({
-		url: "index.html",
-		type: "get",
-		dataType: "html"
-	}).done(function(data)  {
-		$("body").html(data).slideDown(1000);
-	});
-	});
-
 });
-
-// tarkistaa onko uusi ennätys. Jos uusi ennätys niin, asettaa nykyisen pistemäärän ennätykseksi.
-function isRecord() {
-	if (points > record) {
-		setRecord(points);
-	};
-};
 
 function uniqueNumber(num, rNonCyrillic) {
 	var unique = true;
@@ -185,38 +264,19 @@ function shuffle(array) {
     return array;
 };
 
-// lue ennätys
-function getRecord() {
+function newRecord(points) {
 	$.ajax({
-		url: "src/getRecord.php?game=" + game,
-		type: "GET",
-		dataType: "text",
-		success: function() { console.log("getting the record was succesful"); }
-	}).done(function(data) {;
-		record = parseInt(data);
-		$("#record").text(record);
-	});
-};
-
-// aseta uus ennätys
-function setRecord() {
-	$.ajax({
-		url: "src/setRecord.php?record=" + points + "&game=" + game,
+		url: "src/connect?points=" + points,
 		type: "POST",
 		dataType: "text",
-		success: function() { console.log("new record set"); }
+		success: function() { alert("success"); }
 	}).done(function(data) {
-		// eipä oikein tarvi tehdä mitään.
-		$("#record").text(record);
+		alert(data);
 	});
 };
 
-// kirjoita pistemäärä sivulle. Yksinkertaistamiseksi laitoin isRecord() myös tänne. Tällä tavalla, joka kerta kun pistemäärä kasvaa se myös tarkistaa, onko ennätys
 function setPoints() {
-	getRecord();
-	$("#points").text(points);
-	$("#record").text(record);
-	isRecord();
+	$("#pointsDiv").text("Points: " + points);
 };
 
 function print(arrayLength, rNonCyrillic, cyrilicArray, nonCyrillicArray) {
@@ -247,6 +307,7 @@ function print(arrayLength, rNonCyrillic, cyrilicArray, nonCyrillicArray) {
 function correctAnswer(location) {
 	$(location).css("background-color", "#7AB55C");
 	$(location).animate({"background-color": "#4B77BE"}, 1000);
+	console.log(points);
 	points++;
 	setPoints();
 };
@@ -280,19 +341,18 @@ function correctAnswerCheck(rCyrillic, rNonCyrillic) {
 	}
 };
 
-function time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec) {
-				if (sec == 10) {
-					$("#time").text("00:" + sec);
-					print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
-				}
-				else {
-					$("#time").text("00:0" + sec);
-				}
-				if (sec == 0) {
-					sec = 11;
-					points = 0;
-					setPoints();
-				}
-				sec--;
-				return sec;
-			}
+function q() {
+		if (sec == 10) {
+			$("#time").text("00:" + sec);
+			print(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray);
+			correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+		}
+		else {
+			$("#time").text("00:0" + sec);
+		}
+		if (sec == 0) {
+				sec = 11;
+		}
+		sec--;
+			console.log(sec);
+}
