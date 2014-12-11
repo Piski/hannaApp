@@ -34,7 +34,7 @@ $(document).ready(function() {
 	game = "adjectives";
 	var cyrillicArray = ["новый", "большой", "должен", "последний", "российский", "общий", "высокий", "хороший", "главный", "лучший", "маленький", "молодой", "государственный", "полный", "советский", "настоящий",
 						"старый", "разный", "нужный", "белый", "собственный", "чёрный", "основной", "далёкий"];
-	var nonCyrillicArray = ["new", "large", "have to", "last", "Russian", "common", "tall", "good", "main", "the best", "small", "young", "public", "full", "Soviet", "real",
+	var nonCyrillicArray = ["new", "large", "have to", "last", "Russian", "common", "tall", "good", "leading", "the best", "small", "young", "public", "full", "Soviet", "real",
 							"old", "different", "necessary", "white", "own", "black", "main", "distant"];
 	} else if (query == "Adverbs") {
 	// Adverbs
@@ -152,6 +152,7 @@ $(document).ready(function() {
 		}
 	});
 
+	//back-nappia painettaessa timer nollautuu + back-nappi muuttuu vihreäksi + avataan index.html
 	$("#back").mousedown("click", function(){
 	  $(this).css("background-color", "#7AB55C");
 	  clearInterval(timer);
@@ -285,6 +286,7 @@ function correctAnswerCheck(rCyrillic, rNonCyrillic) {
 	}
 };
 
+//kun sekunnit = 10 -> printataan uudet kirjaimet, jos sec = 0 -> nollataan pisteet ja asetetaan sekunnit takaisin 10:een (11-1) 
 function time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec) {
 				if (sec == 10) {
 					$("#time").text("00:" + sec);
