@@ -152,6 +152,11 @@ $(document).ready(function() {
 		}
 	});
 
+	$("#back").mousedown("click", function(){
+	  $(this).css("background-color", "#7AB55C");
+	  clearInterval(timer);
+	});
+
 	$("#back").mouseup(function() {
     $.ajax({
 		url: "index.html",
