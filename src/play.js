@@ -72,16 +72,12 @@ $(document).ready(function() {
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
 				}, 1000 );
 
-
-
-
 	// Mitä painetaan?
 	$("#left_top").mousedown(function() {
 	//vain kun bool on true voidaan painaa vastauksia --> ei voi painaa nappia useasti --> peli ei sekoa
 	if (bool) {
 		bool = false;
 		if (rCyrillic == rNonCyrillic[0]) {
-			console.log(bool);
 			clearInterval(timer);
 			correctAnswer("#left_top");
 			sec = 10;
@@ -91,7 +87,6 @@ $(document).ready(function() {
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
 				 }, 1000 ); }, 1000);
 		} else {
-			console.log(bool);
 			clearInterval(timer);
 			wrongAnswer("#left_top", correct);
 			sec = 10;
@@ -109,13 +104,13 @@ $(document).ready(function() {
 
 	$("#right_top").mousedown(function() {
 	if (bool) {
-		bool = !bool;
+		bool = false;
 		if (rCyrillic == rNonCyrillic[1]) {
 			clearInterval(timer);
 			correctAnswer("#right_top");
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
-				bool = !bool;
+				bool = true;
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
 				}, 1000 ); }, 1000);
@@ -124,7 +119,7 @@ $(document).ready(function() {
 			wrongAnswer("#right_top", correct);
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
-				bool = !bool;
+				bool = true;
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
 				}, 1000 ); }, 2000);
@@ -136,13 +131,13 @@ $(document).ready(function() {
 
 	$("#left_bot").mousedown(function() {
 	if (bool) {
-		bool = !bool;
+		bool = false;
 		if (rCyrillic == rNonCyrillic[2]) {
 			clearInterval(timer);
 			correctAnswer("#left_bot");
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
-				bool = !bool;
+				bool = true;
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
 				}, 1000 ); }, 1000);
@@ -151,7 +146,7 @@ $(document).ready(function() {
 			wrongAnswer("#left_bot", correct);
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
-				bool = !bool;
+				bool = true;
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
 				}, 1000 ); }, 2000);
@@ -163,13 +158,13 @@ $(document).ready(function() {
 
 	$("#right_bot").mousedown(function() {
 	if (bool) {
-		bool = !bool;
+		bool = false;
 		if (rCyrillic == rNonCyrillic[3]) {
 			clearInterval(timer);
 			correctAnswer("#right_bot");
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
-				bool = !bool;
+				bool = true;
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
 				}, 1000 ); }, 1000);
@@ -178,7 +173,7 @@ $(document).ready(function() {
 			wrongAnswer("#right_bot", correct);
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
-				bool = !bool;
+				bool = true;
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
 				}, 1000 ); }, 2000);
