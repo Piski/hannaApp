@@ -1,18 +1,13 @@
-*.unselectable {
-   -moz-user-select: -moz-none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
-
-   /*
-     Introduced in IE 10.
-     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
-   */
-   -ms-user-select: none;
-   user-select: none;
-}
-
 * {
 	font-family: 'Poiret One', cursive;
+	/*
+		-webkit-touch-callout: none;
+	    -webkit-user-select: none;
+	    -khtml-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	*/
 }
 
 html, body {
@@ -46,6 +41,35 @@ html, body {
 	text-align: center;
 	height: 80%;
 	background-color: #E74C3C;
+}
+
+#play_letters:active {
+	background-color: #7AB55C;
+}
+
+#play_nouns:active {
+	background-color: #7AB55C;
+}
+
+#play_verbs:active {
+	background-color: #7AB55C;
+}
+
+#play_adjectives:active {
+	background-color: #7AB55C;
+}
+
+#play_adverbs:active {
+	background-color: #7AB55C;
+}
+
+#play_mustKnowns:active {
+	background-color: #7AB55C;
+}
+
+
+*:focus {
+    outline: none;
 }
 
 #play_letters {
@@ -131,3 +155,4 @@ html, body {
 	padding: 10px;
 	margin: auto;
 }
+

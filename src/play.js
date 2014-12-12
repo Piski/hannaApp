@@ -3,9 +3,7 @@ $(document).ready(function() {
 	window.game;
 	// Haetaan html:n title tag:sta nimi.
 	var title = document.body.getElementsByTagName('title');
-	console.log(title);
 	query = title[0].text;
-	console.log(query);
 	
 	// Asetetaan taulukot riippuen mikä html kutsuu scriptiä.
 	if (query == "Letters") {
@@ -32,23 +30,23 @@ $(document).ready(function() {
 	} else if (query == "Adjectives") {
 	// Adjectives
 	game = "adjectives";
-	var cyrillicArray = ["новый", "большой", "должен", "последний", "российский", "общий", "высокий", "хороший", "главный", "лучший", "маленький", "молодой", "государственный", "полный", "советский", "настоящий",
+	var cyrillicArray = ["новый", "большой", "должен", "последний", "российский", "общий", "высокий", "хороший", "главный", "лучший", "маленький", "молодой", "красиво", "полный", "советский", "настоящий",
 						"старый", "разный", "нужный", "белый", "собственный", "чёрный", "основной", "далёкий"];
-	var nonCyrillicArray = ["new", "large", "have to", "last", "Russian", "common", "tall", "good", "leading", "the best", "small", "young", "public", "full", "Soviet", "real",
+	var nonCyrillicArray = ["new", "large", "have to", "last", "Russian", "common", "tall", "good", "leading", "the best", "small", "young", "beautiful", "full", "Soviet", "real",
 							"old", "different", "necessary", "white", "own", "black", "main", "distant"];
 	} else if (query == "Adverbs") {
 	// Adverbs
 	game = "adverbs";
-	var cyrillicArray = ["ещё", "уже", "очень", "можно", "надо", "нет", "тоже", "более", "конечно", "также", "вдруг", "почти", "сразу", "хорошо", "сегодня", "совсем",
+	var cyrillicArray = ["плохо", "уже", "очень", "можно", "надо", "нет", "тоже", "более", "конечно", "также", "вдруг", "почти", "сразу", "хорошо", "сегодня", "совсем",
 						"вообще", "больше", "вместе", "например", "нужно", "опять", "нельзя", "особенно"];
-	var nonCyrillicArray = ["more", "already", "very", "may", "need", "no", "also", "more", "of course", "as well", "suddenly", "almost", "immediately", "good", "today", "completely",
+	var nonCyrillicArray = ["badly", "already", "very", "may", "need", "no", "also", "more", "of course", "as well", "suddenly", "almost", "immediately", "good", "today", "completely",
 							"generally", "more", "together", "for example", "need", "again", "cannot", "especially"];
 	} else if (query == "MustKnowns") {
 	// Must know words
 	game = "mustKnowns";
 	var cyrillicArray = ["я", "он", "это", "она", "они", "мы", "который", "то", "что", "свой", "весь", "так", "ты", "все", "всё",
-						"вы", "такой", "его", "себя", "один", "как", "сам", "другой", "наш"];
-	var nonCyrillicArray = ["I", "he", "this", "she", "they", "we", "which", "that", "what", "one’s own", "entire", "so", "you", "everyone", "all", "you",
+						"друг", "такой", "его", "себя", "один", "как", "сам", "другой", "наш"];
+	var nonCyrillicArray = ["I", "he", "this", "she", "they", "we", "which", "that", "what", "one’s own", "entire", "so", "you", "everyone", "all", "friend",
 							"such", "his", "oneself", "one", "how", "self", "another", "our"];
 	} else {
 		console.log("An error has occured setting up the arrays");
@@ -78,133 +76,119 @@ $(document).ready(function() {
 
 
 	// Mitä painetaan?
-	$("#left_top").mouseup(function() {
+	$("#left_top").mousedown(function() {
 	//vain kun bool on true voidaan painaa vastauksia --> ei voi painaa nappia useasti --> peli ei sekoa
 	if (bool) {
+		bool = false;
 		if (rCyrillic == rNonCyrillic[0]) {
-			bool = !bool;
 			console.log(bool);
 			clearInterval(timer);
 			correctAnswer("#left_top");
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
+				bool = true;
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 1000 );
-			}, 1000);
-			setTimeout(function() {
-				bool = !bool; 
-				console.log("2 " + bool);
-			}, 2000);
+				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+				 }, 1000 ); }, 1000);
 		} else {
-			bool = !bool;
 			console.log(bool);
 			clearInterval(timer);
 			wrongAnswer("#left_top", correct);
 			sec = 10;
 			setTimeout(function() { 
+				bool = true;
 				timer = setInterval(function() {
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
-				correct = correctAnswerCheck(rCyrillic, rNonCyrillic); }, 1000 ); 
-			}, 2000);
-			setTimeout(function() {
-				bool = !bool; 
-				console.log("2 " + bool);
-			}, 3000);
+				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
+			}, 1000 ); }, 2000);
 		}
 	} else {
-		console.log("booli false");
+		console.log("bool false");
 	}
 	});
 
-	$("#right_top").mouseup(function() {
+	$("#right_top").mousedown(function() {
 	if (bool) {
+		bool = !bool;
 		if (rCyrillic == rNonCyrillic[1]) {
-			bool = !bool;
 			clearInterval(timer);
 			correctAnswer("#right_top");
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
+				bool = !bool;
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				bool = !bool;
 				}, 1000 ); }, 1000);
 		} else {
-			bool = !bool;
 			clearInterval(timer);
 			wrongAnswer("#right_top", correct);
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
+				bool = !bool;
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				bool = !bool;
 				}, 1000 ); }, 2000);
 		}
 	} else {
-		console.log("booli false");
+		console.log("bool false");
 	}
 	});
 
-	$("#left_bot").mouseup(function() {
+	$("#left_bot").mousedown(function() {
 	if (bool) {
+		bool = !bool;
 		if (rCyrillic == rNonCyrillic[2]) {
-			bool = !bool;
 			clearInterval(timer);
 			correctAnswer("#left_bot");
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
+				bool = !bool;
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				bool = !bool;
 				}, 1000 ); }, 1000);
 		} else {
-			bool = !bool;
 			clearInterval(timer);
 			wrongAnswer("#left_bot", correct);
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
+				bool = !bool;
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				bool = !bool;
 				}, 1000 ); }, 2000);
 		}
 	} else {
-		console.log("booli false");
+		console.log("bool false");
 	}
 	});
 
-	$("#right_bot").mouseup(function() {
+	$("#right_bot").mousedown(function() {
 	if (bool) {
+		bool = !bool;
 		if (rCyrillic == rNonCyrillic[3]) {
-			bool = !bool;
 			clearInterval(timer);
 			correctAnswer("#right_bot");
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
+				bool = !bool;
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				bool = !bool;
 				}, 1000 ); }, 1000);
 		} else {
-			bool = !bool;
 			clearInterval(timer);
 			wrongAnswer("#right_bot", correct);
 			sec = 10;
 			setTimeout(function() { timer = setInterval(function() { 
+				bool = !bool;
 				sec = time(arrayLength, rNonCyrillic, cyrillicArray, nonCyrillicArray, sec);
 				correct = correctAnswerCheck(rCyrillic, rNonCyrillic);
-				bool = !bool;
 				}, 1000 ); }, 2000);
 		}
 	} else {
-		console.log("booli false");
+		console.log("bool false");
 	}
 	});
 	
-	//back-nappia painettaessa timer nollautuu + back-nappi muuttuu vihreäksi + avataan index.html
-	$("#back").mousedown("click", function(){
-	 	$(this).css("background-color", "#7AB55C");
-	});
-
+	//back-nappia painettaessa timer nollautuu + avataan index.html
 	$("#back").mouseup(function wait() {
 		//odotetaan että bool = true ettei timer sekoo
 		if (bool) {
@@ -214,7 +198,7 @@ $(document).ready(function() {
 				type: "get",
 				dataType: "html"
 			}).done(function(data)  {
-				$("body").html(data).slideDown(1000);
+				$("body").html(data);
 			});
 		} else {
 			setTimeout(function() { wait(); }, 100);

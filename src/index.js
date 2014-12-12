@@ -1,33 +1,5 @@
 $(document).ready(function() {
-	// vaihda väriä et näkee paremmin mitä painetaan.
-	/*
-	* KESKEN. Ei muuta takas. Tutki toggleClass
-	*/
-
-	$("#play_letters").mousedown("click", function(){
-	  $(this).css("background-color", "#7AB55C");
-	});
-
-	$("#play_nouns").mousedown("click", function(){
-	  $(this).css("background-color", "#7AB55C");
-	});
-
-	$("#play_verbs").mousedown("click", function(){
-	  $(this).css("background-color", "#7AB55C");
-	});
-
-	$("#play_adjectives").mousedown("click", function(){
-	  $(this).css("background-color", "#7AB55C");
-	});
-
-	$("#play_adverbs").mousedown("click", function(){
-	  $(this).css("background-color", "#7AB55C");
-	});
-
-	$("#play_mustKnowns").mousedown("click", function(){
-	  $(this).css("background-color", "#7AB55C");
-	});
-
+	// vaihda väriä et näkee paremmin mitä painetaan. :active ei oikein toimi oikein meidän tapauksessa.
 
 	// letters
 	$("#play_letters").mouseup(function() {
@@ -36,7 +8,7 @@ $(document).ready(function() {
 		type: "get",
 		dataType: "html"
 	}).done(function(data)  {
-		$("body").html(data).slideDown(1000);
+		$("body").html(data);
 	});
 	});
 	// nouns
@@ -46,7 +18,7 @@ $(document).ready(function() {
 		type: "get",
 		dataType: "html"
 	}).done(function(data)  {
-		$("body").html(data).slideDown(1000);
+		$("body").html(data);
 	});
 	});
 	//verbs
@@ -56,7 +28,7 @@ $(document).ready(function() {
 		type: "get",
 		dataType: "html"
 	}).done(function(data)  {
-		$("body").html(data).slideDown(1000);
+		$("body").html(data);
 	});
 	});
 	// adjectives
@@ -66,7 +38,7 @@ $(document).ready(function() {
 		type: "get",
 		dataType: "html"
 	}).done(function(data)  {
-		$("body").html(data).slideDown(1000);
+		$("body").html(data);
 	});
 	});
 	//adverbs
@@ -76,7 +48,7 @@ $(document).ready(function() {
 		type: "get",
 		dataType: "html"
 	}).done(function(data)  {
-		$("body").html(data).slideDown(1000);
+		$("body").html(data);
 	});
 	});
 	// must knowns
@@ -86,7 +58,7 @@ $(document).ready(function() {
 		type: "get",
 		dataType: "html"
 	}).done(function(data)  {
-		$("body").html(data).slideDown(1000);
+		$("body").html(data);
 	});
 	});
 });

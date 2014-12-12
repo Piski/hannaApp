@@ -2,21 +2,12 @@
 *	#E74C3C	#4B77BE
 */
 
-*.unselectable {
-   -moz-user-select: -moz-none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
-
-   /*
-     Introduced in IE 10.
-     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
-   */
-   -ms-user-select: none;
-   user-select: none;
-}
-
 * {
 	font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+*:focus {
+    outline: none;
 }
 
 html, body {
@@ -28,6 +19,10 @@ html, body {
  	margin: auto;
  	overflow: hidden;
 	background-color: #4B77BE;
+}
+
+#back:active {
+	background-color: #7AB55C
 }
 
 #container {
@@ -513,7 +508,7 @@ html, body {
 	height: 100%;
 	text-align: center;
 	background-color: #4B77BE;
-	margin-top: 3%;
+	margin-top: 5%;
 	margin-bottom: 1%
 }
 
