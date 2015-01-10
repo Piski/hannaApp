@@ -632,7 +632,7 @@ html, body {
 }
 
 #left_top {
-	line-height: 125%;
+	line-height: 150%;
 	float: left;
 	border: none;
 	width: 100%;
@@ -643,7 +643,7 @@ html, body {
 }
 
 #right_top {
-	line-height: 125%;
+	line-height: 150%;
 	float: left;
 	border: none;
 	width: 100%;
@@ -654,7 +654,7 @@ html, body {
 }
 
 #left_bot {
-	line-height: 125%;
+	line-height: 150%;
 	float: left;
 	border: none;
 	width: 100%;
@@ -665,7 +665,7 @@ html, body {
 }
 
 #right_bot {
-	line-height: 125%;
+	line-height: 150%;
 	float: left;
 	border: none;
 	width: 100%;
@@ -679,7 +679,7 @@ html, body {
 	float: left;
 	width: 100%;
 	height: 10vh;
-	margin-top: 7%;
+	margin-top: 8%;
 	text-align: center;
 	background-color: #4B77BE;
 }
@@ -692,6 +692,6 @@ html, body {
 	border-radius: 0px;
 	background-color: #E74C3C;	
 	color: white;
-	font-size: 2em;
+	font-size: 1em;
 }
 }
