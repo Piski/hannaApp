@@ -1,5 +1,4 @@
 <?php
-// http://www.tutorialspoint.com/php/mysql_insert_php.htm
 
 if (isset($_GET["record"]) && isset($_GET["game"])) {
       $newRecord = $_GET["record"];
@@ -9,7 +8,7 @@ if (isset($_GET["record"]) && isset($_GET["game"])) {
 
 $servername = "mysql.metropolia.fi";
 $username = "m0602227";
-$password = "shemtov1";
+$password = "password";
 $dbname = "m0602227";
 
 // Create connection
